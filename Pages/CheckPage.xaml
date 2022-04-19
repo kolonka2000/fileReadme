@@ -1,0 +1,35 @@
+﻿<Page x:Class="PM04.Pages.CheckPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PM04.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CheckPage">
+
+    <Grid Background="White">
+        <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+            <TextBlock Text="Заполните данные для печати" Margin="5" FontSize="18" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock Text="Фамилия:" FontSize="16"></TextBlock>
+            <TextBox Name="lname" Width="200" HorizontalAlignment="Left" FontSize="16" Margin="0,0,0,10"></TextBox>
+            <TextBlock Text="Имя:" FontSize="16"></TextBlock>
+            <TextBox Name="fname" Width="200" HorizontalAlignment="Left" FontSize="16" Margin="0,0,0,10"></TextBox>
+            <TextBlock Text="Отчество:" FontSize="16"></TextBlock>
+            <TextBox Name="mname" Width="200" HorizontalAlignment="Left" FontSize="16" Margin="0,0,0,10"></TextBox>
+            <TextBlock Text="Паспорт:" FontSize="16"></TextBlock>
+            <TextBox Name="pass" Width="200" HorizontalAlignment="Left" FontSize="16" Margin="0,0,0,10"></TextBox>
+            <TextBlock Text="Телефон:" FontSize="16"></TextBlock>
+            <TextBox Name="phone" Width="200" HorizontalAlignment="Left" FontSize="16" Margin="0,0,0,10"></TextBox>
+            <TextBlock Text="Город:" FontSize="16"></TextBlock>
+            <TextBox Name="city" Width="200" HorizontalAlignment="Left" FontSize="16" Margin="0,0,0,10"></TextBox>
+            <TextBlock Text="Ряд:" FontSize="16"></TextBlock>
+            <TextBox Name="ryad" Width="200" HorizontalAlignment="Left" FontSize="16" Margin="0,0,0,10"></TextBox>
+            <TextBlock Text="Место:" FontSize="16"></TextBlock>
+            <TextBox Name="place" Width="200" HorizontalAlignment="Left" FontSize="16" Margin="0,0,0,10"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Click="BtnCheckStart_Click" Content="Напечатать" FontSize="16" Background="Coral" Width="120" Height="35" VerticalAlignment="Bottom" Margin="15"></Button>
+        </StackPanel>
+    </Grid>
+</Page>

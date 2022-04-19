@@ -1,0 +1,33 @@
+﻿<Page x:Class="PM04.Pages.AddEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PM04.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditPage">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="273*"/>
+            <ColumnDefinition Width="527*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Название города" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></TextBlock>
+        <TextBlock Grid.Row="1" Text="Страна" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></TextBlock>
+        <TextBlock Grid.Row="2" Text="Время полёта" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></TextBlock>
+
+        <TextBox Text="{Binding City}" Grid.Column="1" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300"></TextBox>
+        <ComboBox SelectedItem="{Binding Country}" Name="ComboCountry" DisplayMemberPath="Title" Grid.Row="1" Grid.Column="1" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250"></ComboBox>
+        <TextBox Text="{Binding TravelTime}" Grid.Row="2" Grid.Column="1" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Width="100"></TextBox>
+
+        <Button Name="SaveBtn" Click="SaveBtn_Click" Content="Сохранить" Background="Coral" FontSize="16" Height="35" Width="140" Grid.ColumnSpan="2" Grid.Row="3"></Button>
+    </Grid>
+</Page>

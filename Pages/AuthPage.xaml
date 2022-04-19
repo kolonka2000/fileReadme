@@ -1,0 +1,23 @@
+﻿<Page x:Class="PM04.AuthPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PM04"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="AuthPage">
+
+    <Grid Background="White">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Авторизация" FontSize="20" HorizontalAlignment="Center" Margin="0,0,0,20"></TextBlock>
+            <TextBlock Text="Логин:" FontSize="16" Margin="0,0,0,5"></TextBlock>
+            <TextBox Name="LoginBox" Width="150" FontSize="16" Margin="0,0,0,5"></TextBox>
+            <TextBlock Text="Пароль:" FontSize="16" Margin="0,0,0,5"></TextBlock>
+            <PasswordBox Name="PasswordBox" Width="150" FontSize="16" Margin="0,0,0,15"></PasswordBox>
+            <StackPanel>
+                <Button Name="AuthBtn" Click="AuthBtn_Click" Content="Войти" Width="80" Height="25" FontSize="14" Background="Coral"></Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

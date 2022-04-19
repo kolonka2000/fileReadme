@@ -1,0 +1,52 @@
+﻿<Page x:Class="PM04.DataGridPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PM04"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DataGridPage">
+
+    <Grid Background="White" IsVisibleChanged="Page_IsVisibleChanged">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBlock Text="Поиск по городам:" FontSize="16" Padding="10,0,0,10"></TextBlock>
+                <TextBox Name="SearchBox" TextChanged="SearchBox_TextChanged" Width="200" FontSize="16" Margin="10,0,0,10"></TextBox>
+                <TextBlock Name="SortBox" Text="Сортировка:" FontSize="16" Padding="10,0,0,10"></TextBlock>
+                <ComboBox Name="SortCombo" SelectionChanged="SortCombo_SelectionChanged" Width="200" FontSize="16" Margin="10,0,0,10">
+                    <ComboBoxItem>Отсутствует</ComboBoxItem>
+                    <ComboBoxItem>По возрастанию</ComboBoxItem>
+                    <ComboBoxItem>По убыванию</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBlock Text="Выберите страну:" FontSize="16" Padding="10,0,0,10"></TextBlock>
+                <ComboBox Name="FilterCombo" DisplayMemberPath="Title" SelectionChanged="FilterCombo_SelectionChanged" Width="200" FontSize="16" Margin="10,0,0,10"></ComboBox>
+            </StackPanel>
+        </StackPanel>
+        <DataGrid Grid.Row="1" Name="DGrid_Flights" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Город" Binding="{Binding City}" Width="*"/>
+                <DataGridTextColumn Header="Страна" Binding="{Binding Country.Title}" Width="*"/>
+                <DataGridTextColumn Header="Время полёта" Binding="{Binding TravelTime, StringFormat={}{0} час(а/ов)}" Width="*"/>
+                <DataGridTemplateColumn Width="200">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="EditBtn" Click="EditBtn_Click" Content="Редактировать" Width="auto" Height="35" FontSize="16" Background="Coral" Margin="10" IsEnabled="{Binding IsEnabled}"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Name="AddBtn" Click="AddBtn_Click" Content="Добавить" Width="100" Height="35" FontSize="16" Background="Coral" Margin="10" HorizontalAlignment="Left"></Button>
+            <Button Name="CheckBtn" Click="CheckBtn_Click" Content="Печать рейса" Width="120" Height="35" FontSize="16" Background="Coral" Margin="10" HorizontalAlignment="Left"></Button>
+        </StackPanel>
+    </Grid>
+</Page>
